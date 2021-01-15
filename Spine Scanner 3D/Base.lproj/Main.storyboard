@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypI-YX-DKr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spine Scanner 3D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fst-0h-R7G">
+                                <rect key="frame" x="82" y="188" width="250" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-SB-Uw0">
+                                <rect key="frame" x="100" y="257" width="214" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-tF-GgH">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" systemColor="systemGrayColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HfQ-z1-9zA">
+                                        <rect key="frame" x="0.0" y="64" width="214" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" systemColor="systemGrayColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKW-L3-CEA" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
+                                <rect key="frame" x="172" y="415" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="6mU-7v-gZF"/>
+                                    <constraint firstAttribute="height" constant="70" id="sb0-9A-Pa0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="sw4-do-uSf" kind="show" id="cWH-8d-VbW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="cKW-L3-CEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6j7-pj-ohc"/>
+                            <constraint firstItem="RJR-SB-Uw0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="9HG-Mg-VO2"/>
+                            <constraint firstItem="RJR-SB-Uw0" firstAttribute="top" secondItem="fst-0h-R7G" secondAttribute="bottom" constant="33" id="faS-sU-EOT"/>
+                            <constraint firstItem="cKW-L3-CEA" firstAttribute="top" secondItem="RJR-SB-Uw0" secondAttribute="bottom" constant="60" id="gZb-GZ-HfJ"/>
+                            <constraint firstItem="fst-0h-R7G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="100" id="hYq-qr-MKP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RJR-SB-Uw0" secondAttribute="trailing" constant="100" id="vgI-dA-oTG"/>
+                            <constraint firstItem="fst-0h-R7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGS-gG-0vQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6P8-iV-4FC"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="HfQ-z1-9zA" id="a9y-y7-IPG"/>
+                        <outlet property="nameTextField" destination="vWH-tF-GgH" id="ifr-Ux-of4"/>
+                        <outlet property="startButton" destination="cKW-L3-CEA" id="Ikx-ue-HjZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="75.669642857142847"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="AW7-Gf-ZGm">
+            <objects>
+                <viewController id="sw4-do-uSf" customClass="CameraViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dta-VI-sYz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dai-Lv-tRM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdY-hQ-R8I" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
+                                <rect key="frame" x="172" y="742" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Vfg-1S-ic5"/>
+                                    <constraint firstAttribute="width" constant="70" id="XdU-rD-d8X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="7EO-ZD-8xE" kind="show" id="dAc-Il-LZx"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-s0-JQd">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem title="RealPic" id="Cwx-fv-EyT">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="realOrLidarButtonPressed:" destination="sw4-do-uSf" id="rrL-Je-IPo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uK7-CR-71j"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uK7-CR-71j" firstAttribute="trailing" secondItem="dai-Lv-tRM" secondAttribute="trailing" id="0qe-cB-JAR"/>
+                            <constraint firstItem="6qw-s0-JQd" firstAttribute="centerX" secondItem="dta-VI-sYz" secondAttribute="centerX" id="6R3-O9-fna"/>
+                            <constraint firstItem="UdY-hQ-R8I" firstAttribute="centerX" secondItem="dta-VI-sYz" secondAttribute="centerX" id="Edv-ND-4nQ"/>
+                            <constraint firstItem="uK7-CR-71j" firstAttribute="bottom" secondItem="dai-Lv-tRM" secondAttribute="bottom" constant="10" id="JiJ-0o-1mU"/>
+                            <constraint firstAttribute="bottom" secondItem="6qw-s0-JQd" secondAttribute="bottom" constant="34" id="UnP-CB-YW1"/>
+                            <constraint firstItem="6qw-s0-JQd" firstAttribute="leading" secondItem="uK7-CR-71j" secondAttribute="leading" id="WEN-j0-JvI"/>
+                            <constraint firstItem="dai-Lv-tRM" firstAttribute="top" secondItem="uK7-CR-71j" secondAttribute="top" id="ZTu-kS-hNy"/>
+                            <constraint firstItem="dai-Lv-tRM" firstAttribute="leading" secondItem="uK7-CR-71j" secondAttribute="leading" id="aji-g0-FT1"/>
+                            <constraint firstItem="6qw-s0-JQd" firstAttribute="trailing" secondItem="uK7-CR-71j" secondAttribute="trailing" id="asT-j9-XMQ"/>
+                            <constraint firstItem="uK7-CR-71j" firstAttribute="bottom" secondItem="UdY-hQ-R8I" secondAttribute="bottom" constant="50" id="v6L-jX-bDd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QwF-cF-ehk"/>
+                    <connections>
+                        <outlet property="imageView" destination="dai-Lv-tRM" id="k4K-0t-1sv"/>
+                        <outlet property="realOrLidarButton" destination="Cwx-fv-EyT" id="PGQ-13-FFO"/>
+                        <outlet property="takePictureButton" destination="UdY-hQ-R8I" id="3a4-Y9-v9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4e-Pu-b57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="76"/>
+        </scene>
+        <!--Model View Controller-->
+        <scene sceneID="dqb-iV-CgO">
+            <objects>
+                <viewController id="7EO-ZD-8xE" customClass="ModelViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1r7-9N-OAz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-k1-AcB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
+                            </sceneKitView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tsx-n6-bn2"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Tsx-n6-bn2" firstAttribute="bottom" secondItem="DJB-k1-AcB" secondAttribute="bottom" constant="10" id="3YJ-et-Uks"/>
+                            <constraint firstItem="DJB-k1-AcB" firstAttribute="top" secondItem="Tsx-n6-bn2" secondAttribute="top" id="P7y-TB-hgN"/>
+                            <constraint firstItem="DJB-k1-AcB" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" id="ckX-aF-1bR"/>
+                            <constraint firstItem="Tsx-n6-bn2" firstAttribute="trailing" secondItem="DJB-k1-AcB" secondAttribute="trailing" id="nIv-lW-f1V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGq-wy-Nhh">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="a7S-v4-0VY">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="7EO-ZD-8xE" id="vhB-Bg-qJc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="a7S-v4-0VY" id="X8B-ng-oBv"/>
+                        <outlet property="sceneView" destination="DJB-k1-AcB" id="eqM-HJ-43J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="com-Kt-gqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2750" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CXg-ta-Ftl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ypI-YX-DKr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNn-JA-vKm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EZT-co-BAg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-1F-1aC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="UdY-hQ-R8I">
+            <size key="intrinsicContentSize" width="30.5" height="32"/>
+        </designable>
+        <designable name="cKW-L3-CEA">
+            <size key="intrinsicContentSize" width="38" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
