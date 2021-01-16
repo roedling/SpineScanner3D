@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypI-YX-DKr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -9,25 +9,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="zeN-ox-Yhh">
+            <objects>
+                <viewController id="eHt-YC-BOW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gUl-lz-DDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hinweis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGS-fx-Iea">
+                                <rect key="frame" x="20" y="98" width="388" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3gJ-CH-Q1b">
+                                <rect key="frame" x="20" y="178" width="388" height="694"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
+
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fjM-ad-NuK"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fjM-ad-NuK" firstAttribute="trailing" secondItem="AGS-fx-Iea" secondAttribute="trailing" constant="20" id="3AT-k6-HjU"/>
+                            <constraint firstItem="AGS-fx-Iea" firstAttribute="leading" secondItem="fjM-ad-NuK" secondAttribute="leading" constant="20" id="Ev9-dk-edR"/>
+                            <constraint firstItem="AGS-fx-Iea" firstAttribute="top" secondItem="fjM-ad-NuK" secondAttribute="top" constant="10" id="Ezj-lu-fAW"/>
+                            <constraint firstItem="AGS-fx-Iea" firstAttribute="centerX" secondItem="gUl-lz-DDQ" secondAttribute="centerX" id="I4Z-1Q-DwP"/>
+                            <constraint firstItem="3gJ-CH-Q1b" firstAttribute="leading" secondItem="fjM-ad-NuK" secondAttribute="leading" constant="20" id="Qcv-7k-V65"/>
+                            <constraint firstItem="3gJ-CH-Q1b" firstAttribute="top" secondItem="AGS-fx-Iea" secondAttribute="bottom" constant="20" id="SDC-W4-ojE"/>
+                            <constraint firstItem="fjM-ad-NuK" firstAttribute="trailing" secondItem="3gJ-CH-Q1b" secondAttribute="trailing" constant="20" id="W0P-tL-GvQ"/>
+                            <constraint firstItem="fjM-ad-NuK" firstAttribute="bottom" secondItem="3gJ-CH-Q1b" secondAttribute="bottom" constant="20" id="xhw-lj-lXn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="M0i-Wz-U6R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DgN-g7-7oX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.03738317757006" y="-585.74514038876896"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spine Scanner 3D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fst-0h-R7G">
-                                <rect key="frame" x="82" y="188" width="250" height="36"/>
+                                <rect key="frame" x="89" y="188" width="250" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-SB-Uw0">
-                                <rect key="frame" x="100" y="257" width="214" height="98"/>
+                                <rect key="frame" x="100" y="257" width="228" height="98"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-tF-GgH">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -39,7 +101,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HfQ-z1-9zA">
-                                        <rect key="frame" x="0.0" y="64" width="214" height="34"/>
+                                        <rect key="frame" x="0.0" y="64" width="228" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,7 +115,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKW-L3-CEA" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
-                                <rect key="frame" x="172" y="415" width="70" height="70"/>
+                                <rect key="frame" x="179" y="415" width="70" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="6mU-7v-gZF"/>
@@ -67,6 +129,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4us-I5-O4g"/>
                                     <segue destination="sw4-do-uSf" kind="show" id="cWH-8d-VbW"/>
                                 </connections>
                             </button>
@@ -83,7 +146,14 @@
                             <constraint firstItem="fst-0h-R7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGS-gG-0vQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6P8-iV-4FC"/>
+                    <navigationItem key="navigationItem" id="6P8-iV-4FC">
+                        <barButtonItem key="rightBarButtonItem" image="questionmark" catalog="system" id="sQD-rp-wrA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="eHt-YC-BOW" kind="show" id="kj3-Gg-78a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ageTextField" destination="HfQ-z1-9zA" id="a9y-y7-IPG"/>
                         <outlet property="nameTextField" destination="vWH-tF-GgH" id="ifr-Ux-of4"/>
@@ -97,16 +167,16 @@
         <!--Camera View Controller-->
         <scene sceneID="AW7-Gf-ZGm">
             <objects>
-                <viewController id="sw4-do-uSf" customClass="CameraViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="camera_VC" id="sw4-do-uSf" customClass="CameraViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dta-VI-sYz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dai-Lv-tRM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="794"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdY-hQ-R8I" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
-                                <rect key="frame" x="172" y="742" width="70" height="70"/>
+                                <rect key="frame" x="179" y="742" width="70" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Vfg-1S-ic5"/>
@@ -125,14 +195,20 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-s0-JQd">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <barButtonItem title="RealPic" id="Cwx-fv-EyT">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="realOrLidarButtonPressed:" destination="sw4-do-uSf" id="rrL-Je-IPo"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="qbc-Qi-29V">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5dq-ZW-pkF">
+                                            <rect key="frame" x="20" y="11" width="388" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <segments>
+                                                <segment title="Lidar Picture"/>
+                                                <segment title="RealPicture"/>
+                                            </segments>
+                                            <color key="selectedSegmentTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </segmentedControl>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -145,43 +221,70 @@
                             <constraint firstItem="6qw-s0-JQd" firstAttribute="centerX" secondItem="dta-VI-sYz" secondAttribute="centerX" id="6R3-O9-fna"/>
                             <constraint firstItem="UdY-hQ-R8I" firstAttribute="centerX" secondItem="dta-VI-sYz" secondAttribute="centerX" id="Edv-ND-4nQ"/>
                             <constraint firstItem="uK7-CR-71j" firstAttribute="bottom" secondItem="dai-Lv-tRM" secondAttribute="bottom" constant="10" id="JiJ-0o-1mU"/>
-                            <constraint firstAttribute="bottom" secondItem="6qw-s0-JQd" secondAttribute="bottom" constant="34" id="UnP-CB-YW1"/>
+                            <constraint firstItem="6qw-s0-JQd" firstAttribute="bottom" secondItem="uK7-CR-71j" secondAttribute="bottom" id="PFz-B1-NJn"/>
                             <constraint firstItem="6qw-s0-JQd" firstAttribute="leading" secondItem="uK7-CR-71j" secondAttribute="leading" id="WEN-j0-JvI"/>
                             <constraint firstItem="dai-Lv-tRM" firstAttribute="top" secondItem="uK7-CR-71j" secondAttribute="top" id="ZTu-kS-hNy"/>
                             <constraint firstItem="dai-Lv-tRM" firstAttribute="leading" secondItem="uK7-CR-71j" secondAttribute="leading" id="aji-g0-FT1"/>
                             <constraint firstItem="6qw-s0-JQd" firstAttribute="trailing" secondItem="uK7-CR-71j" secondAttribute="trailing" id="asT-j9-XMQ"/>
-                            <constraint firstItem="uK7-CR-71j" firstAttribute="bottom" secondItem="UdY-hQ-R8I" secondAttribute="bottom" constant="50" id="v6L-jX-bDd"/>
+                            <constraint firstItem="uK7-CR-71j" firstAttribute="bottom" secondItem="UdY-hQ-R8I" secondAttribute="bottom" constant="80" id="v6L-jX-bDd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QwF-cF-ehk"/>
                     <connections>
                         <outlet property="imageView" destination="dai-Lv-tRM" id="k4K-0t-1sv"/>
-                        <outlet property="realOrLidarButton" destination="Cwx-fv-EyT" id="PGQ-13-FFO"/>
+                        <outlet property="realOrLidarControl" destination="5dq-ZW-pkF" id="LHx-mH-WCq"/>
                         <outlet property="takePictureButton" destination="UdY-hQ-R8I" id="3a4-Y9-v9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4e-Pu-b57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="76"/>
+            <point key="canvasLocation" x="1734.1121495327102" y="75.809935205183592"/>
         </scene>
         <!--Model View Controller-->
         <scene sceneID="dqb-iV-CgO">
             <objects>
                 <viewController id="7EO-ZD-8xE" customClass="ModelViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1r7-9N-OAz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-k1-AcB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="794"/>
                             </sceneKitView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-nJ-LEl">
+                                <rect key="frame" x="0.0" y="873" width="442" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem style="plain" id="56H-6w-mgC">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="0y7-h3-ahY">
+                                            <rect key="frame" x="20" y="10.666666666666664" width="402" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <segments>
+                                                <segment title="realPic"/>
+                                                <segment title="red"/>
+                                                <segment title="green"/>
+                                                <segment title="blue"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="selectedSegmentTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="chooseMaterialPressed:" destination="7EO-ZD-8xE" eventType="valueChanged" id="V5S-8Z-sei"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tsx-n6-bn2"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Tsx-n6-bn2" firstAttribute="bottom" secondItem="DJB-k1-AcB" secondAttribute="bottom" constant="10" id="3YJ-et-Uks"/>
+                            <constraint firstItem="Tsx-n6-bn2" firstAttribute="bottom" secondItem="hXL-nJ-LEl" secondAttribute="bottom" id="9ae-Ci-GIo"/>
                             <constraint firstItem="DJB-k1-AcB" firstAttribute="top" secondItem="Tsx-n6-bn2" secondAttribute="top" id="P7y-TB-hgN"/>
+                            <constraint firstItem="hXL-nJ-LEl" firstAttribute="trailing" secondItem="Tsx-n6-bn2" secondAttribute="trailing" id="X90-BS-VXY"/>
                             <constraint firstItem="DJB-k1-AcB" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" id="ckX-aF-1bR"/>
+                            <constraint firstItem="hXL-nJ-LEl" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" id="ihI-o8-XIA"/>
                             <constraint firstItem="Tsx-n6-bn2" firstAttribute="trailing" secondItem="DJB-k1-AcB" secondAttribute="trailing" id="nIv-lW-f1V"/>
                         </constraints>
                     </view>
@@ -207,7 +310,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ypI-YX-DKr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNn-JA-vKm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,7 +330,7 @@
     </scenes>
     <designables>
         <designable name="UdY-hQ-R8I">
-            <size key="intrinsicContentSize" width="30.5" height="32"/>
+            <size key="intrinsicContentSize" width="30.333333333333332" height="32"/>
         </designable>
         <designable name="cKW-L3-CEA">
             <size key="intrinsicContentSize" width="38" height="34"/>
@@ -235,6 +338,7 @@
     </designables>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

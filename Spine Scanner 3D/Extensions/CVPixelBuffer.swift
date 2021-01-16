@@ -61,5 +61,6 @@ extension CVPixelBuffer {
          let uiImage = UIImage(cgImage: cgImage!)
          return uiImage
      }
+
 }
 

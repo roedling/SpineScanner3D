@@ -14,6 +14,8 @@ class ModelViewController: UIViewController {
     @IBOutlet weak var sceneView: SCNView!
     //var aRDaten: Data?
     var modelData: ModelData?
+    var mesh: SCNGeometry? = nil
+    //var model: ModelData? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +24,49 @@ class ModelViewController: UIViewController {
     
     //Speichern der Daten in einem JSON
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-//    }
-//        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let fileURL = documentsPath.appendingPathComponent("scan.json")
-//        do {
-//            try aRDaten?.write(to: fileURL)
-//
-//            let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
-//            activityViewController.popoverPresentationController?.sourceView = sender
-//            present(activityViewController, animated: true, completion: nil)
-//        } catch {
-//            fatalError("Can't export JSON")
-//        }
-//
-//        print("Save successful!")
-   }
+        guard let appData = frameInfoToJSON(modelData?.frameCopy)
+        else {
+            print("Failed to get FrameInfo as JSON")
+            return
+        }
+        print(modelData!.name)
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let date = Date()
+        let calender = Calendar.current
+        let fileURL = documentsPath.appendingPathComponent("\(modelData!.name)_\(modelData!.age)_\(calender.component(.day, from: date))_\(calender.component(.month, from: date))_\(calender.component(.year, from: date))_\(calender.component(.hour, from: date))_\(calender.component(.minute, from: date)).json")
+        do {
+            try appData.write(to: fileURL)
     
+            let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+            //activityViewController.popoverPresentationController?.sourceView = sender
+            present(activityViewController, animated: true, completion: nil)
+        } catch {
+            fatalError("Can't export JSON")
+        }
+
+       print("Save successful!")
+   }
+
+    
+    @IBAction func chooseMaterialPressed(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mesh!.shaderModifiers = [:]
+            mesh!.firstMaterial!.diffuse.contents = modelData?.colorImage
+        case 1:
+            mesh!.shaderModifiers = [:]
+            mesh!.firstMaterial!.diffuse.contents = UIColor(red: 255/255, green: 000/255, blue: 000/255, alpha: 0.8)
+        case 2:
+            mesh!.shaderModifiers = [:]
+            mesh!.firstMaterial!.diffuse.contents = UIColor(red: 000/255, green: 255/255, blue: 000/255, alpha: 0.8)
+        case 3:
+            mesh!.shaderModifiers = [:]
+            mesh!.firstMaterial!.diffuse.contents = UIColor(red: 000/255, green: 000/255, blue: 255/255, alpha: 0.8)
+        default:
+            mesh!.shaderModifiers = [:]
+            mesh!.firstMaterial!.diffuse.contents = UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
+        }
+    }
     //Erstellen des 3D-Model
     func sceneSetup() {
 
@@ -72,8 +101,9 @@ class ModelViewController: UIViewController {
             scene.rootNode.addChildNode(cameraNode)
 
             //Oberfläche des Models bestimmen
-            let mesh = modelData!.generateMesh()
-            mesh.firstMaterial!.diffuse.contents = modelData?.colorImage // UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
+            //model = ModelData()
+            mesh = modelData!.generateMesh()
+            mesh!.firstMaterial!.diffuse.contents = modelData?.colorImage // UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
         
             // Weitere  Einstellungen
             // rotate texture 90º for portrait mode
@@ -84,12 +114,12 @@ class ModelViewController: UIViewController {
             //mesh.firstMaterial!.diffuse.contents = UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
             
             //Farbe der Spiegelung
-            mesh.firstMaterial!.specular.contents = UIColor.gray
+            mesh!.firstMaterial!.specular.contents = UIColor.gray
             let meshNode = SCNNode(geometry: mesh)
             scene.rootNode.addChildNode(meshNode)
             
             // x/y/z Nullpunkt anzeigen
-            scene.rootNode.addChildNode(Origin())
+            //scene.rootNode.addChildNode(Origin())
 
             sceneView.scene = scene
             

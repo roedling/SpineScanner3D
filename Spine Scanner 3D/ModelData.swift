@@ -19,6 +19,7 @@ class ModelData {
                                                 // value could be nil if vertice was skiped or removed
     private var triangleIndices: [Int32] = []   // 1d list of indices pointing to triangle vertices
     
+    var frameCopy: ARFrame? = nil
     // Kamera intrinsics
     private var fx: Float32 = 0
     private var fy: Float32 = 0
@@ -30,70 +31,74 @@ class ModelData {
     
     // Originales Farbbild
     var colorImage = UIImage()
+    
+    //Persönliche Daten
+    var name: String = ""
+    var age: String = ""
         
     // Konstruktor um die Daten aus dem JSON zu laden
-    init() {
-        let asset = NSDataAsset(name: "ExampleScan1", bundle: Bundle.main)
-        let json: NSDictionary = try! JSONSerialization.jsonObject(with: asset!.data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-        
-        if (json["depthMap"] == nil) {
-            print("No depth data found")
-            return
-        }
-    
-        let depthMapAsDouble = json["depthMap"] as? [[Double]] ?? [[]]
-        depthMap = Array(repeating: Array(repeating: Float32(0), count: depthMapAsDouble[0].count), count: depthMapAsDouble.count)
-        for ix in 0..<depthMapAsDouble.count {
-            for iy in 0..<depthMapAsDouble[ix].count {
-                depthMap[ix][iy] = Float(depthMapAsDouble[ix][iy])
-            }
-        }
-                
-        let cameraIntrinsics = json["cameraIntrinsics"] as? [[Float32]] ?? [[]]
-        
-        // cam & lidar haben (scheinbar) immer querformat (landscape)
-        // bei aufnahme im hochformat (portrait) geht die x achse dann also nach oben (oder nach unten)
-        // das bild erscheint dann um 90 grad gedreht
-        //
-        // Quer (ausgangsformat):
-        // Euler: x = -2º, y = 0º, z = -1º  also Handy quer, kamera links oben = (0,0,0)
-        // Lidar: w = 256.0, h = 192.0, cx = 127.50073, cy = 91.79468
-        //
-        // Hochkant:
-        // Euler: x = -4º, y = 0º, z = -90º  Handy hochkannt => kamera rechts oben = querformat um -90º um die z-achse gedreht
-        // Lidar: w = 256.0, h = 192.0, cx = 123.33783, cy = 95.96991
-        //
-        // Euler positiv => drehung nach links, Euler negativ = drehung nach rechts
-        
-        
-        let camWidth = (json["camImageResolution"] as! NSDictionary)["width"] as! Float32
-        let camHeight = (json["camImageResolution"] as! NSDictionary)["height"] as! Float32
-        
-        let lidarWidth = (json["depthMapResolution"] as! NSDictionary)["width"] as! Float32
-        let lidarHeight = (json["depthMapResolution"] as! NSDictionary)["height"] as! Float32
-        
-        let xScale = 1.0/camWidth * lidarWidth
-        let yScale = 1.0/camHeight * lidarHeight
-                
-        fx = cameraIntrinsics[0][0] * xScale
-        fy = cameraIntrinsics[1][1] * yScale
-        cx = cameraIntrinsics[0][2] * xScale
-        cy = cameraIntrinsics[1][2] * yScale
-        
-        euler.x = Float32((json["cameraEulerAngle"] as! NSDictionary)["x"] as! Double)
-        euler.y = Float32((json["cameraEulerAngle"] as! NSDictionary)["y"] as! Double)
-        euler.z = Float32((json["cameraEulerAngle"] as! NSDictionary)["z"] as! Double)
-        
-        if ((json["colorImage"]) != nil) {
-            let imgBase64 = (json["colorImage"] as? String)!
-            let imageDecoded = Data(base64Encoded: imgBase64, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
-            colorImage = UIImage(data: imageDecoded)!
-        }
-        
-        print("\(#function): Lidar: w = \(lidarWidth), h = \(lidarHeight), cx = \(cx), cy = \(cy)")
-        print("\(#function): Euler: x = \(Int(euler.x.inDegree().rounded()))º, y = \(Int(euler.y.inDegree().rounded()))º, z = \(Int(euler.z.inDegree().rounded()))º")
-        
-    }
+//    init() {
+//        let asset = NSDataAsset(name: "ExampleScan1", bundle: Bundle.main)
+//        let json: NSDictionary = try! JSONSerialization.jsonObject(with: asset!.data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+//
+//        if (json["depthMap"] == nil) {
+//            print("No depth data found")
+//            return
+//        }
+//
+//        let depthMapAsDouble = json["depthMap"] as? [[Double]] ?? [[]]
+//        depthMap = Array(repeating: Array(repeating: Float32(0), count: depthMapAsDouble[0].count), count: depthMapAsDouble.count)
+//        for ix in 0..<depthMapAsDouble.count {
+//            for iy in 0..<depthMapAsDouble[ix].count {
+//                depthMap[ix][iy] = Float(depthMapAsDouble[ix][iy])
+//            }
+//        }
+//
+//        let cameraIntrinsics = json["cameraIntrinsics"] as? [[Float32]] ?? [[]]
+//
+//        // cam & lidar haben (scheinbar) immer querformat (landscape)
+//        // bei aufnahme im hochformat (portrait) geht die x achse dann also nach oben (oder nach unten)
+//        // das bild erscheint dann um 90 grad gedreht
+//        //
+//        // Quer (ausgangsformat):
+//        // Euler: x = -2º, y = 0º, z = -1º  also Handy quer, kamera links oben = (0,0,0)
+//        // Lidar: w = 256.0, h = 192.0, cx = 127.50073, cy = 91.79468
+//        //
+//        // Hochkant:
+//        // Euler: x = -4º, y = 0º, z = -90º  Handy hochkannt => kamera rechts oben = querformat um -90º um die z-achse gedreht
+//        // Lidar: w = 256.0, h = 192.0, cx = 123.33783, cy = 95.96991
+//        //
+//        // Euler positiv => drehung nach links, Euler negativ = drehung nach rechts
+//
+//
+//        let camWidth = (json["camImageResolution"] as! NSDictionary)["width"] as! Float32
+//        let camHeight = (json["camImageResolution"] as! NSDictionary)["height"] as! Float32
+//
+//        let lidarWidth = (json["depthMapResolution"] as! NSDictionary)["width"] as! Float32
+//        let lidarHeight = (json["depthMapResolution"] as! NSDictionary)["height"] as! Float32
+//
+//        let xScale = 1.0/camWidth * lidarWidth
+//        let yScale = 1.0/camHeight * lidarHeight
+//
+//        fx = cameraIntrinsics[0][0] * xScale
+//        fy = cameraIntrinsics[1][1] * yScale
+//        cx = cameraIntrinsics[0][2] * xScale
+//        cy = cameraIntrinsics[1][2] * yScale
+//
+//        euler.x = Float32((json["cameraEulerAngle"] as! NSDictionary)["x"] as! Double)
+//        euler.y = Float32((json["cameraEulerAngle"] as! NSDictionary)["y"] as! Double)
+//        euler.z = Float32((json["cameraEulerAngle"] as! NSDictionary)["z"] as! Double)
+//
+//        if ((json["colorImage"]) != nil) {
+//            let imgBase64 = (json["colorImage"] as? String)!
+//            let imageDecoded = Data(base64Encoded: imgBase64, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+//            colorImage = UIImage(data: imageDecoded)!
+//        }
+//
+//        print("\(#function): Lidar: w = \(lidarWidth), h = \(lidarHeight), cx = \(cx), cy = \(cy)")
+//        print("\(#function): Euler: x = \(Int(euler.x.inDegree().rounded()))º, y = \(Int(euler.y.inDegree().rounded()))º, z = \(Int(euler.z.inDegree().rounded()))º")
+//
+//    }
     
     // Konstruktor (während der Laufzeit)
     init(_ frame: ARFrame?) {
@@ -101,7 +106,7 @@ class ModelData {
             print("Error, no frame")
             return
         }
-        
+        frameCopy = frame!
         guard let cvDepthMap = frame!.smoothedSceneDepth?.depthMap else {
             print("Error, no depth map")
             return

@@ -15,9 +15,7 @@ class CameraViewController: UIViewController, ARSessionDelegate {
     //Erstellen der Variablen
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var takePictureButton: RoundButton!
-    @IBOutlet weak var realOrLidarButton: UIBarButtonItem!
-    var name = ""
-    var age = ""
+    @IBOutlet weak var realOrLidarControl: UISegmentedControl!
     var session: ARSession!
     var configuration = ARWorldTrackingConfiguration()
     
@@ -29,6 +27,9 @@ class CameraViewController: UIViewController, ARSessionDelegate {
     var camFx: Float?
     var camFy: Float?
 
+    var name: String = ""
+    var age: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,7 @@ class CameraViewController: UIViewController, ARSessionDelegate {
         session = ARSession()
         session.delegate = self
         
-        print(name)
+        print("mein name ist im CameraView: \(name), alter: \(age)")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -139,30 +140,44 @@ class CameraViewController: UIViewController, ARSessionDelegate {
         // Transformiert das Bild auf die richtige Bildschirmgröße
         let transformedImage = depthBuffer.transformed(by: normalizeTransform.concatenating(flipTransform).concatenating(displayTransform).concatenating(toViewPortTransform)).cropped(to: viewPort)
         
+        //print(name)
         
+        
+        //let displayImage = UIImage(ciImage: transformedImage)
         let displayImage = UIImage(ciImage: transformedImage)
         
         //Display Darstellung
         DispatchQueue.main.async {
-            if self.realOrLidarButton.title == "RealPic" {
+            switch self.realOrLidarControl.selectedSegmentIndex {
+            case 0:
                 self.imageView.image = displayImage
-            } else {
-                self.imageView.image = frame.capturedImage.toUIImage()
+            case  1:
+                self.imageView.image = CameraViewController.convertToUIImage(frame.capturedImage)
+            default:
+                self.imageView.image = displayImage
             }
-        }
-    }
-    @IBAction func realOrLidarButtonPressed(_ sender: UIBarButtonItem) {
-        if self.realOrLidarButton.title == "RealPic" {
-            realOrLidarButton.title = "LidarPic"
-        } else {
-            realOrLidarButton.title = "RealPic"
         }
     }
     
     // Übergibt dem nächsten ViewController den aktuellen Frame
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let modelViewController: ModelViewController = segue.destination as! ModelViewController
-        modelViewController.modelData = ModelData(self.session.currentFrame)
+        let modelData = ModelData(self.session.currentFrame)
+        modelData.name = name
+        modelData.age = age
+        modelViewController.modelData = modelData
+    }
+    
+    static func convertToUIImage(_ buffer: CVPixelBuffer) -> UIImage?{
+        let ciImage = CIImage(cvPixelBuffer: buffer)
+        let temporaryContext = CIContext(options: nil)
+        if let temporaryImage = temporaryContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(buffer), height: CVPixelBufferGetHeight(buffer)))
+        {
+            let capturedImage = UIImage(cgImage: temporaryImage, scale: 1.0, orientation: .right)
+            return capturedImage
+        }
+        return nil
     }
 
 }
+

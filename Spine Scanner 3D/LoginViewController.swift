@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
+    var name: String = ""
+    var age: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,7 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
+        
     }
     
     //Funktion die die Tastatur wieder einfahren lässt, sobald woandershin getippt wird
@@ -45,7 +49,8 @@ class LoginViewController: UIViewController {
     //Überprüft  ob in den Textfeldern etwas steht und gibt den startButton frei wenn beide nicht leer sind
     @objc func textFieldChanged() {
         if !(nameTextField.text!.isEmpty)  && !(ageTextField.text!.isEmpty) {
-            
+            name = nameTextField.text!
+            //age = ageTextField.text!
             startButton.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             startButton.setTitleColor(.black, for: .normal)
             startButton.isEnabled = true
@@ -58,9 +63,20 @@ class LoginViewController: UIViewController {
     
     //übergabe von Variablen an nächsten ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cameraViewController: CameraViewController = segue.destination as! CameraViewController
-        cameraViewController.name = nameTextField.text!
-        cameraViewController.age = ageTextField.text!
+//        if sender as! NSObject == UIBarButtonItem() { } else {
+//        let cameraViewController: CameraViewController = segue.destination as! CameraViewController
+//        cameraViewController.name = name
+//        cameraViewController.age = age
+//        }
     }
-
+    @IBAction func startButtonPressed(_ sender: Any) {
+//        guard let vc = storyboard?.instantiateViewController(identifier: "camera_VC") as? CameraViewController  else {
+//            return
+//        }
+//        //let cameraViewController: CameraViewController = segue.destination as! CameraViewController
+//
+//        vc.name = name
+//        vc.age = age
+        }
+    
 }
