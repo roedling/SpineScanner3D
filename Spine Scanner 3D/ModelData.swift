@@ -19,7 +19,6 @@ class ModelData {
                                                 // value could be nil if vertice was skiped or removed
     private var triangleIndices: [Int32] = []   // 1d list of indices pointing to triangle vertices
     
-    var frameCopy: ARFrame? = nil
     // Kamera intrinsics
     private var fx: Float32 = 0
     private var fy: Float32 = 0
@@ -116,12 +115,7 @@ class ModelData {
     
     // Konstruktor (während der Laufzeit)
     init(_ frame: ARFrame?) {
-        if (frame == nil) {
-            print("Error, no frame")
-            return
-        }
-        frameCopy = frame!
-        guard let cvDepthMap = frame!.smoothedSceneDepth?.depthMap else {
+        guard let cvDepthMap = frame?.smoothedSceneDepth?.depthMap else {
             print("Error, no depth map")
             return
         }
