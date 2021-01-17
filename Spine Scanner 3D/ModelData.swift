@@ -318,6 +318,8 @@ class ModelData {
         
         let jsonObject: [String: Any] = [
             "timeStamp": timestamp,
+            "name": name,
+            "age": age,
             "cameraEulerAngle": dictFromSimdFloat3(euler),
             "cameraIntrinsics": arrayFromSimdFloat3x3(intrinsics),
             "camImageResolution": [
