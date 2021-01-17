@@ -22,7 +22,6 @@
 		C1DB921D25AF1E3F00191FAC /* CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB921C25AF1E3E00191FAC /* CVPixelBuffer.swift */; };
 		C1DB922025AF1E7100191FAC /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB921F25AF1E7100191FAC /* Float.swift */; };
 		C1DB922325AF1F9C00191FAC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB922225AF1F9C00191FAC /* ModelData.swift */; };
-		C1DB922725AF21DC00191FAC /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB922625AF21DC00191FAC /* Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		C1DB921C25AF1E3E00191FAC /* CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBuffer.swift; sourceTree = "<group>"; };
 		C1DB921F25AF1E7100191FAC /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		C1DB922225AF1F9C00191FAC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		C1DB922625AF21DC00191FAC /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 				C1DB921325ADF1E400191FAC /* CameraViewController.swift */,
 				C16C3CC325AF334C00A63D5E /* ModelViewController.swift */,
 				C16C3CC725AF366300A63D5E /* Origin.swift */,
-				C1DB922525AF21CB00191FAC /* JSON */,
 				C1DB921725AF1DCD00191FAC /* Extensions */,
 				C1DB91FB25ADE35500191FAC /* Main.storyboard */,
 				C1DB921125ADE6FE00191FAC /* Design */,
@@ -111,14 +108,6 @@
 				C1DB921F25AF1E7100191FAC /* Float.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		C1DB922525AF21CB00191FAC /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				C1DB922625AF21DC00191FAC /* Controller.swift */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +182,6 @@
 			files = (
 				C1DB920B25ADE39B00191FAC /* LoginViewController.swift in Sources */,
 				C1DB920F25ADE6EF00191FAC /* RoundButton.swift in Sources */,
-				C1DB922725AF21DC00191FAC /* Controller.swift in Sources */,
 				C1DB91FA25ADE35500191FAC /* NaviagationController.swift in Sources */,
 				C1DB921D25AF1E3F00191FAC /* CVPixelBuffer.swift in Sources */,
 				C1DB91F625ADE35500191FAC /* AppDelegate.swift in Sources */,
