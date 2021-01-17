@@ -24,7 +24,7 @@ class ModelViewController: UIViewController {
     
     //Speichern der Daten in einem JSON
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        guard let appData = frameInfoToJSON(modelData?.frameCopy)
+        guard let appData = modelData?.exportAsJSON()
         else {
             print("Failed to get FrameInfo as JSON")
             return
