@@ -8,6 +8,7 @@ import Foundation
 import SceneKit
 import ARKit
 
+
 class ModelData {
     
     private var depthMap: [[Float32]] = [[]]    // 2d array of depth data from the lidar
@@ -29,8 +30,28 @@ class ModelData {
     // Kamera euler angles
     private var euler = simd_float3(0,0,0)
     
+    // Kamera intrinsics
+    private var intrinsics = simd_float3x3(0)
+    
+    // Kamera Aufloessung
+     private var camWidth: Int = 0
+     private var camHeight: Int = 0
+
+     // LiDAR Aufloessung
+     private var lidarWidth: Int = 0
+     private var lidarHeight: Int = 0
+
+    //Marker Positionen
+    var markerDL: SCNVector3 = SCNVector3()
+    var markerDR: SCNVector3 = SCNVector3()
+    var markerVP: SCNVector3 = SCNVector3()
+    var markerDM: SCNVector3 = SCNVector3()
+    
+    
     // Originales Farbbild
     var colorImage = UIImage()
+    
+    private var timestamp: TimeInterval = 0
     
     //Persönliche Daten
     var name: String = ""
@@ -102,11 +123,6 @@ class ModelData {
     
     // Konstruktor (während der Laufzeit)
     init(_ frame: ARFrame?) {
-        if (frame == nil) {
-            print("Error, no frame")
-            return
-        }
-        frameCopy = frame!
         guard let cvDepthMap = frame!.smoothedSceneDepth?.depthMap else {
             print("Error, no depth map")
             return
@@ -119,28 +135,29 @@ class ModelData {
         
         depthMap = cvDepthMap.exportAsArray()
         
-        euler.x = frame!.camera.eulerAngles.x
-        euler.y = frame!.camera.eulerAngles.y
-        euler.z = frame!.camera.eulerAngles.z
+
+        euler = frame!.camera.eulerAngles
+        intrinsics = frame!.camera.intrinsics
         
-        let camWidth = Float(frame!.camera.imageResolution.width)
-        let camHeight = Float(frame!.camera.imageResolution.height)
+        camWidth = Int(frame!.camera.imageResolution.width)
+        camHeight = Int(frame!.camera.imageResolution.height)
         
-        let lidarWidth = Float(CVPixelBufferGetWidth(cvDepthMap))
-        let lidarHeight = Float(CVPixelBufferGetHeight(cvDepthMap))
+        lidarWidth = CVPixelBufferGetWidth(cvDepthMap)
+        lidarHeight = CVPixelBufferGetHeight(cvDepthMap)
         
         // Skaliert die Kamera intrinsics auf die Größe des LiDAR Sensor
-        let xScale = 1.0/camWidth * lidarWidth
-        let yScale = 1.0/camHeight * lidarHeight
+        let xScale = 1.0/Float(camWidth) * Float(lidarWidth)
+        let yScale = 1.0/Float(camHeight) * Float(lidarHeight)
         
         fx = frame!.camera.intrinsics[0][0] * xScale
         fy = frame!.camera.intrinsics[1][1] * yScale
         cx = frame!.camera.intrinsics[2][0] * xScale
         cy = frame!.camera.intrinsics[2][1] * yScale
 
-        euler = frame!.camera.eulerAngles
         
         colorImage = frame!.capturedImage.toUIImage()
+        
+        timestamp = frame!.timestamp
           
         print("\(#function): Euler: x = \(Int(euler.x.inDegree().rounded()))º, y = \(Int(euler.y.inDegree().rounded()))º, z = \(Int(euler.z.inDegree().rounded()))º")
         print("\(#function): Lidar: w = \(lidarWidth), h = \(lidarHeight), cx = \(cx), cy = \(cy)")
@@ -265,7 +282,10 @@ class ModelData {
     
     // generate triangle from 3 points (given as index into self.vertices[]) and
     // add the calculated normal to self.normals[]
-    func genTriangle(_ p1:Int32?, _ p2:Int32?, _ p3:Int32?) {
+    
+    
+    
+    private func genTriangle(_ p1:Int32?, _ p2:Int32?, _ p3:Int32?) {
         if (p1 == nil || p2 == nil || p3 == nil) {
             // generate no triangle if one or more vertices are nil (clipped away)
             return
@@ -292,7 +312,7 @@ class ModelData {
     }
     
     // Kalkulierung der Normalen und normalisierung
-    func calcNormal(_ p1:Int32, _ p2:Int32, _ p3:Int32) -> SCNVector3
+    private func calcNormal(_ p1:Int32, _ p2:Int32, _ p3:Int32) -> SCNVector3
     {
         let v1 = vertices[Int(p1)]
         let v2 = vertices[Int(p2)]
@@ -301,6 +321,68 @@ class ModelData {
         let n = (v2 - v1).cross(v3 - v1)
         
         return(n.normalized())
+    }
+    
+    // Exportieren der Daten als JSON
+    func exportAsJSON() -> Data? {
+        
+        let capturedImageData = colorImage.pngData()
+        let encodedImage = capturedImageData?.base64EncodedString(options: .lineLength64Characters)
+        
+        let jsonObject: [String: Any] = [
+            "timeStamp": timestamp,
+            "name": name,
+            "age": age,
+            "cameraEulerAngle": dictFromSimdFloat3(euler),
+            "cameraIntrinsics": arrayFromSimdFloat3x3(intrinsics),
+            "camImageResolution": [
+                "width": camWidth,
+                "height": camHeight
+            ],
+            "depthMapResolution" : [
+                "width": lidarWidth,
+                "height": lidarHeight
+            ],
+            "depthMap": depthMap,
+            "colorImage": encodedImage!
+        ]
+        
+        guard let json = try? JSONSerialization.data(withJSONObject: jsonObject, options: []) else { return nil }
+        return json
+    }
+    
+    private func dictFromSimdFloat3(_ vector: simd_float3) -> [String: Float] {
+        return ["x": vector.x, "y": vector.y, "z": vector.z]
+    }
+    
+    private func arrayFromSimdFloat3x3(_ matrix: matrix_float3x3) -> [[Float]] {
+        var array: [[Float]] = Array(repeating: Array(repeating:Float(), count: 3), count: 3)
+        array[0] = [matrix.columns.0.x, matrix.columns.1.x, matrix.columns.2.x]
+        array[1] = [matrix.columns.0.y, matrix.columns.1.y, matrix.columns.2.y]
+        array[2] = [matrix.columns.0.z, matrix.columns.1.z, matrix.columns.2.z]
+        return array
+    }
+    
+    func trunkInclination() -> Float {
+        let a = (markerDM.z - markerVP.z)
+        let b = (markerDM.y - markerVP.z)
+        let alpha = (atan(a/b)).inDegree()
+        return alpha
+    }
+    func trunkImbalanceDegree() -> Float {
+        let a = (markerDM.x - markerVP.x)
+        let b = (markerDM.y - markerVP.y)
+        let alpha = (atan(a/b)).inDegree()
+        return alpha
+    }
+    func trunkImbalance() -> Float {
+        let a = (markerDM.x - markerVP.x)
+        return (a*1000)
+    }
+    
+    func pelvicTilt() -> Float {
+        let a = abs(markerDR.y - markerDL.y)
+        return (a*1000)
     }
     
 }

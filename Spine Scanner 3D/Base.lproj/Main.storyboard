@@ -25,8 +25,8 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3gJ-CH-Q1b">
                                 <rect key="frame" x="20" y="178" width="388" height="694"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+                                <color key="backgroundColor" red="0.22155457740000001" green="0.29965364929999999" blue="0.4000127316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
 
@@ -46,14 +46,14 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
 
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</mutableString>
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fjM-ad-NuK"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.22155457740000001" green="0.29965364929999999" blue="0.4000127316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fjM-ad-NuK" firstAttribute="trailing" secondItem="AGS-fx-Iea" secondAttribute="trailing" constant="20" id="3AT-k6-HjU"/>
                             <constraint firstItem="AGS-fx-Iea" firstAttribute="leading" secondItem="fjM-ad-NuK" secondAttribute="leading" constant="20" id="Ev9-dk-edR"/>
@@ -80,13 +80,13 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spine Scanner 3D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fst-0h-R7G">
-                                <rect key="frame" x="89" y="188" width="250" height="36"/>
+                                <rect key="frame" x="89" y="313" width="250" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-SB-Uw0">
-                                <rect key="frame" x="100" y="257" width="228" height="98"/>
+                                <rect key="frame" x="100" y="382" width="228" height="98"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-tF-GgH">
                                         <rect key="frame" x="0.0" y="0.0" width="228" height="34"/>
@@ -115,7 +115,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKW-L3-CEA" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
-                                <rect key="frame" x="179" y="415" width="70" height="70"/>
+                                <rect key="frame" x="179" y="540" width="70" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="6mU-7v-gZF"/>
@@ -130,18 +130,26 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4us-I5-O4g"/>
-                                    <segue destination="sw4-do-uSf" kind="show" id="cWH-8d-VbW"/>
+                                    <segue destination="sw4-do-uSf" kind="show" identifier="ToCameraVC" id="cWH-8d-VbW"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOH" translatesAutoresizingMaskIntoConstraints="NO" id="wEE-15-6El">
+                                <rect key="frame" x="64" y="88" width="300" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="ah4-Xb-4RN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" red="0.22155457740000001" green="0.29965364929999999" blue="0.4000127316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="wEE-15-6El" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Nu-eH-UVP"/>
                             <constraint firstItem="cKW-L3-CEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6j7-pj-ohc"/>
                             <constraint firstItem="RJR-SB-Uw0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="9HG-Mg-VO2"/>
+                            <constraint firstItem="wEE-15-6El" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ozx-xI-j8E"/>
                             <constraint firstItem="RJR-SB-Uw0" firstAttribute="top" secondItem="fst-0h-R7G" secondAttribute="bottom" constant="33" id="faS-sU-EOT"/>
                             <constraint firstItem="cKW-L3-CEA" firstAttribute="top" secondItem="RJR-SB-Uw0" secondAttribute="bottom" constant="60" id="gZb-GZ-HfJ"/>
-                            <constraint firstItem="fst-0h-R7G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="100" id="hYq-qr-MKP"/>
+                            <constraint firstItem="fst-0h-R7G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="225" id="hYq-qr-MKP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RJR-SB-Uw0" secondAttribute="trailing" constant="100" id="vgI-dA-oTG"/>
                             <constraint firstItem="fst-0h-R7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yGS-gG-0vQ"/>
                         </constraints>
@@ -162,7 +170,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="75.669642857142847"/>
+            <point key="canvasLocation" x="928.03738317757006" y="75.161987041036724"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="AW7-Gf-ZGm">
@@ -252,19 +260,19 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                                 <rect key="frame" x="0.0" y="88" width="428" height="794"/>
                             </sceneKitView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-nJ-LEl">
-                                <rect key="frame" x="0.0" y="873" width="442" height="49"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem style="plain" id="56H-6w-mgC">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="0y7-h3-ahY">
-                                            <rect key="frame" x="20" y="10.666666666666664" width="402" height="33"/>
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="0y7-h3-ahY">
+                                            <rect key="frame" x="20" y="10.666666666666664" width="388" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <segments>
                                                 <segment title="realPic"/>
-                                                <segment title="red"/>
-                                                <segment title="green"/>
-                                                <segment title="blue"/>
+                                                <segment title="skin color"/>
+                                                <segment title="checkered"/>
+                                                <segment title="rainbow"/>
                                             </segments>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="selectedSegmentTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -275,16 +283,57 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-d9-h9l" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
+                                <rect key="frame" x="30" y="743" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XRe-2c-BVO"/>
+                                    <constraint firstAttribute="height" constant="60" id="xQI-OM-8Nl"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="7EO-ZD-8xE" eventType="touchUpInside" id="m1m-fV-xMX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdR-KR-sqc" customClass="RoundButton" customModule="Spine_Scanner_3D" customModuleProvider="target">
+                                <rect key="frame" x="298" y="743" width="100" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ssD-NH-QlB"/>
+                                    <constraint firstAttribute="height" constant="60" id="ug7-T8-HOC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Parameter">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="calculationButtonPressed:" destination="7EO-ZD-8xE" eventType="touchUpInside" id="hYO-hA-tVF"/>
+                                    <segue destination="1oL-X0-uTN" kind="show" id="1DZ-FR-soJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tsx-n6-bn2"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Tsx-n6-bn2" firstAttribute="bottom" secondItem="DJB-k1-AcB" secondAttribute="bottom" constant="10" id="3YJ-et-Uks"/>
+                            <constraint firstItem="dpa-d9-h9l" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" constant="30" id="3mu-gU-MNm"/>
                             <constraint firstItem="Tsx-n6-bn2" firstAttribute="bottom" secondItem="hXL-nJ-LEl" secondAttribute="bottom" id="9ae-Ci-GIo"/>
+                            <constraint firstItem="Tsx-n6-bn2" firstAttribute="trailing" secondItem="fdR-KR-sqc" secondAttribute="trailing" constant="30" id="Oai-Q5-WTi"/>
                             <constraint firstItem="DJB-k1-AcB" firstAttribute="top" secondItem="Tsx-n6-bn2" secondAttribute="top" id="P7y-TB-hgN"/>
+                            <constraint firstItem="hXL-nJ-LEl" firstAttribute="top" secondItem="dpa-d9-h9l" secondAttribute="bottom" constant="40" id="WXC-DR-hu6"/>
                             <constraint firstItem="hXL-nJ-LEl" firstAttribute="trailing" secondItem="Tsx-n6-bn2" secondAttribute="trailing" id="X90-BS-VXY"/>
                             <constraint firstItem="DJB-k1-AcB" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" id="ckX-aF-1bR"/>
                             <constraint firstItem="hXL-nJ-LEl" firstAttribute="leading" secondItem="Tsx-n6-bn2" secondAttribute="leading" id="ihI-o8-XIA"/>
+                            <constraint firstItem="hXL-nJ-LEl" firstAttribute="top" secondItem="fdR-KR-sqc" secondAttribute="bottom" constant="40" id="n9M-M1-z7w"/>
                             <constraint firstItem="Tsx-n6-bn2" firstAttribute="trailing" secondItem="DJB-k1-AcB" secondAttribute="trailing" id="nIv-lW-f1V"/>
                         </constraints>
                     </view>
@@ -296,13 +345,105 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="calculationButton" destination="fdR-KR-sqc" id="cYe-8S-U6Y"/>
+                        <outlet property="clearButton" destination="dpa-d9-h9l" id="0wB-k9-tAE"/>
                         <outlet property="saveButton" destination="a7S-v4-0VY" id="X8B-ng-oBv"/>
                         <outlet property="sceneView" destination="DJB-k1-AcB" id="eqM-HJ-43J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="com-Kt-gqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2750" y="80"/>
+            <point key="canvasLocation" x="2749" y="75"/>
+        </scene>
+        <!--Parameter View Controller-->
+        <scene sceneID="Dgv-HL-jXG">
+            <objects>
+                <viewController id="1oL-X0-uTN" customClass="ParameterViewController" customModule="Spine_Scanner_3D" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9s-h3-WAz">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOH" translatesAutoresizingMaskIntoConstraints="NO" id="biM-R9-kqh">
+                                <rect key="frame" x="295" y="88" width="133" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133" id="HoG-Pg-t5W"/>
+                                    <constraint firstAttribute="width" constant="133" id="oKf-G4-0C9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjl-jK-n7M">
+                                <rect key="frame" x="20" y="136" width="146" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Inclination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaE-55-toF">
+                                <rect key="frame" x="20" y="262" width="143" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Imbalance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNL-NV-bO3">
+                                <rect key="frame" x="20" y="363" width="145" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pelvic Tilt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkV-FJ-ezW">
+                                <rect key="frame" x="20" y="464" width="83.333333333333329" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-Xb-sRA">
+                                <rect key="frame" x="20" y="306" width="66.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-sA-zXB">
+                                <rect key="frame" x="20" y="407" width="66.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-2Y-gfO">
+                                <rect key="frame" x="20" y="508" width="66.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pph-Ce-ZXh"/>
+                        <color key="backgroundColor" red="0.22155457740000001" green="0.29965364929999999" blue="0.4000127316" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Yko-Xb-sRA" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="1OV-fS-fbm"/>
+                            <constraint firstItem="vjl-jK-n7M" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="1R2-FQ-VG1"/>
+                            <constraint firstItem="biM-R9-kqh" firstAttribute="top" secondItem="pph-Ce-ZXh" secondAttribute="top" id="2fR-wW-kfP"/>
+                            <constraint firstItem="fkV-FJ-ezW" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="C6p-DO-X54"/>
+                            <constraint firstItem="Yko-Xb-sRA" firstAttribute="top" secondItem="ZaE-55-toF" secondAttribute="bottom" constant="20" id="Drc-1a-g4K"/>
+                            <constraint firstItem="fkV-FJ-ezW" firstAttribute="top" secondItem="Iae-sA-zXB" secondAttribute="bottom" constant="40" id="Hb3-0N-l8O"/>
+                            <constraint firstItem="pph-Ce-ZXh" firstAttribute="trailing" secondItem="biM-R9-kqh" secondAttribute="trailing" id="Oa2-Cv-Fw0"/>
+                            <constraint firstItem="uy6-2Y-gfO" firstAttribute="top" secondItem="fkV-FJ-ezW" secondAttribute="bottom" constant="20" id="UZQ-8I-on1"/>
+                            <constraint firstItem="ZaE-55-toF" firstAttribute="top" secondItem="vjl-jK-n7M" secondAttribute="bottom" constant="90" id="YTN-HI-rIM"/>
+                            <constraint firstItem="Iae-sA-zXB" firstAttribute="top" secondItem="zNL-NV-bO3" secondAttribute="bottom" constant="20" id="Zqq-GP-5XO"/>
+                            <constraint firstItem="Iae-sA-zXB" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="alI-ir-mta"/>
+                            <constraint firstItem="uy6-2Y-gfO" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="ao5-xv-orN"/>
+                            <constraint firstItem="zNL-NV-bO3" firstAttribute="top" secondItem="Yko-Xb-sRA" secondAttribute="bottom" constant="40" id="bg8-45-es0"/>
+                            <constraint firstItem="ZaE-55-toF" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="f5F-1U-hK7"/>
+                            <constraint firstItem="vjl-jK-n7M" firstAttribute="top" secondItem="pph-Ce-ZXh" secondAttribute="top" constant="48" id="hkQ-Bm-3YG"/>
+                            <constraint firstItem="zNL-NV-bO3" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="rW4-I7-sei"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IFD-8c-PbS"/>
+                    <connections>
+                        <outlet property="pelvicTilt" destination="uy6-2Y-gfO" id="cAJ-WD-gN5"/>
+                        <outlet property="trunkImbalance" destination="Iae-sA-zXB" id="pqR-Jc-lZo"/>
+                        <outlet property="trunkInclination" destination="Yko-Xb-sRA" id="2fc-Lf-K1t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-ft-yoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3752.8037383177566" y="74.514038876889856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CXg-ta-Ftl">
@@ -335,16 +476,21 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
         <designable name="cKW-L3-CEA">
             <size key="intrinsicContentSize" width="38" height="34"/>
         </designable>
+        <designable name="dpa-d9-h9l">
+            <size key="intrinsicContentSize" width="23.333333333333332" height="26"/>
+        </designable>
+        <designable name="fdR-KR-sqc">
+            <size key="intrinsicContentSize" width="79" height="33"/>
+        </designable>
     </designables>
     <resources>
+        <image name="LogoOH" width="300" height="300"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

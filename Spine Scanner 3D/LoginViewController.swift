@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     @objc func textFieldChanged() {
         if !(nameTextField.text!.isEmpty)  && !(ageTextField.text!.isEmpty) {
             name = nameTextField.text!
-            //age = ageTextField.text!
+            age = ageTextField.text!
             startButton.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             startButton.setTitleColor(.black, for: .normal)
             startButton.isEnabled = true
@@ -63,11 +63,10 @@ class LoginViewController: UIViewController {
     
     //übergabe von Variablen an nächsten ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if sender as! NSObject == UIBarButtonItem() { } else {
-//        let cameraViewController: CameraViewController = segue.destination as! CameraViewController
-//        cameraViewController.name = name
-//        cameraViewController.age = age
-//        }
+        if (segue.identifier != "ToCameraVC") { return }
+        let cameraViewController: CameraViewController = segue.destination as! CameraViewController
+        cameraViewController.name = name
+        cameraViewController.age = age
     }
     @IBAction func startButtonPressed(_ sender: Any) {
 //        guard let vc = storyboard?.instantiateViewController(identifier: "camera_VC") as? CameraViewController  else {
