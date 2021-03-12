@@ -185,27 +185,28 @@ class ModelData {
             for iy in 0..<h {
                 let z = depthMap[ix][iy] //
                 
-                if (z < maxDepth) {  // positionierung des  Models (z-werte anpassen)
+                if (z < maxDepth) {  // Maximaltiefe beachten um Hintergrundobjekte zu eliminieren
                     
                     let x = z * (Float32(ix) - cx) / fx
                     let y = z * (Float32(iy) - cy) / fy
                     
-                    var point3d: SCNVector3 = SCNVector3(-1*x, -1*y, z) // mirror at x and y axis to convert into SceneView coordinate system
-                    point3d.rotateZ(euler.z)  // compensate camera roll (around z axis)
-                    point3d.rotateX(euler.x)  // compensate camera pitch (around x axis)
-                    
                     // coordinaten raum in sceneview ist: z zeigt zur kamera und die schaut nach -z, x nach rechts und y nach oben
                     // depth sensor schaut aber nach +z!
                     // aktuell wird die kamera einfach nach z=-1m verschoben und dann um 180º um die y achse gedreht
-                    // danach zeigt die x achse allerdings nach links...
+                    // danach zeigt die x achse allerdings nach links, daher:
                     
-                    vertices.append(point3d) // add calculated point to array of vertices
-                    normals.append(SCNVector3(x:0,y:0,z:0)) // create an empty normal element
-                    texCoord.append(simd_float2(Float(ix)/Float(w),Float(iy)/Float(h))) // add normalized texture coordinates
-                    idxMatrix[ix][iy] = idx  // store corresponding index
-                    idx+=1  // prepare for next index
+                    var point3d: SCNVector3 = SCNVector3(-1*x, -1*y, z) // spiegeln an der x und y Achse um das Model an das SceneView Koordinatensystem anzupassen
+                    point3d.rotateZ(euler.z)  // Kompensieren von Yaw (um die z Achse)
+                    point3d.rotateX(euler.x)  // Kompensieren von Pitch (um die x Achse)
                     
-                    // compute smalest z value og point cloud
+                    //Vorbereiten für das Generieren des Meshs
+                    vertices.append(point3d) // Umgerechnete Punkte in die List der Vertices hinzufügen
+                    normals.append(SCNVector3(x:0,y:0,z:0)) // Leere Normale anlegen
+                    texCoord.append(simd_float2(Float(ix)/Float(w),Float(iy)/Float(h))) // hinzufügen der normalisierten Texturkoordinaten
+                    idxMatrix[ix][iy] = idx  // Indexliste
+                    idx+=1  // vorbereitung für den nächsten Index
+                    
+                    // kleinsten z Werte der Punktewolke speichern, um das Modell in die richtige Entfernung zu setzen
                     minZ = (point3d.z < minZ) ? point3d.z : minZ
                 }
             }
@@ -290,6 +291,9 @@ class ModelData {
             // generate no triangle if one or more vertices are nil (clipped away)
             return
         }
+        if(maxZ(p1!,p2!,p3!)>0.2) {
+            return
+        }
         triangleIndices.append(p1!)
         triangleIndices.append(p2!)
         triangleIndices.append(p3!)
@@ -322,6 +326,14 @@ class ModelData {
         
         return(n.normalized())
     }
+    
+    private func maxZ(_ p1:Int32, _ p2:Int32, _ p3:Int32) -> Float {
+        let v1 = vertices[Int(p1)]
+        let v2 = vertices[Int(p2)]
+        let v3 = vertices[Int(p3)]
+        return (max(max(v1.z, v2.z), max(v2.z, v3.z)))
+    }
+    
     
     // Exportieren der Daten als JSON
     func exportAsJSON() -> Data? {
