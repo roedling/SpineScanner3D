@@ -1,4 +1,4 @@
-# SpineScanner3D
+# SpineScanner3D                                    ![Homescreen1Klein](https://user-images.githubusercontent.com/50517024/112753432-ee149900-8fd7-11eb-9b8c-7e4a81cc0b87.jpg)
 
 **Die Entwicklung dieser App fand im Rahmen meiner Bachelorarbeit statt.**
 
