@@ -5,7 +5,7 @@
 In dieser Bachelorarbeit geht es um die Implementierung einer Gesundheitsapp für das iPhone 12 Pro. 
 Dabei wird der eingebaute 3D Sensor des Handys verwendet, um den Rücken eines Patienten zu scannen. 
 Durch die folgende Darstellung eines 3D-Modells und Rückgabe einiger wichtiger Parameter können so 
-Diagnosen von Fehlstellungen der Wirbelsäule gestellt, sowie diese kontrolliert werde.
+Diagnosen von Fehlstellungen der Wirbelsäule gestellt, sowie diese kontrolliert werden.
 
 This bachelor-thesis is about the implementation of a health app for the iPhone 12 Pro. 
 The built-in 3D sensor of the phone is used to scan a patient's back. 
