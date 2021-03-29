@@ -55,7 +55,7 @@ class CameraViewController: UIViewController, ARSessionDelegate {
     }
         
     /*
-     From: https://developer.apple.com/forums/thread/663995
+     Von: https://developer.apple.com/forums/thread/663995
      color image and depth image are already aligned. That means the intrinsics of the Lidar are only scaled in relation to the color camera. As the depth image has a resolution of 584 x 384 (frame.sceneDepth!.depthMap) and the color image 3840 x 2880, you get fxD, fyD, cxD and cyD as follows:
      
      fxD = 534/3840 * 1598.34
@@ -66,8 +66,8 @@ class CameraViewController: UIViewController, ARSessionDelegate {
      Before transforming the pointcloud to world coordinates, you have to flip them around the X axis to OpenGL coordinate system.
      
      frame.camera.imageResolution = (1920.0, 1440.0)
-     
      */
+    
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         guard let depthMap = frame.smoothedSceneDepth?.depthMap
         else {
@@ -76,37 +76,21 @@ class CameraViewController: UIViewController, ARSessionDelegate {
         
         // Speichert die Kamerintrinsic und Bildauflösung
         
-        let camIntrinsicsMartix = frame.camera.intrinsics
-        let camImageResolution = frame.camera.imageResolution
-        self.camFx = camIntrinsicsMartix[0][0]
-        self.camFy = camIntrinsicsMartix[1][1]
-        self.camOx = camIntrinsicsMartix[0][2] // u0
-        self.camOy = camIntrinsicsMartix[1][2] // v0
-        self.camWidth = Float(camImageResolution.width)
-        self.camHeight = Float(camImageResolution.height)
+        //let camIntrinsicsMartix = frame.camera.intrinsics
+        //let camImageResolution = frame.camera.imageResolution
+        //self.camFx = camIntrinsicsMartix[0][0]
+        //self.camFy = camIntrinsicsMartix[1][1]
+        //self.camOx = camIntrinsicsMartix[0][2] // u0
+        //self.camOy = camIntrinsicsMartix[1][2] // v0
+        //self.camWidth = Float(camImageResolution.width)
+        //self.camHeight = Float(camImageResolution.height)
         
         
         //Speicher die  Größe des LiDAR Bildes ab
         let depthMapHeight = CVPixelBufferGetHeight(depthMap)
         let depthMapWidth = CVPixelBufferGetWidth(depthMap)
         
-        //print("depthmap w/h: ", w, h)
-        //let bytesPerRow = CVPixelBufferGetBytesPerRow(depthMap)
-        //print("w,h, bytesPerRow:", h, w, bytesPerRow) // 192, 256
-        
-        /*
-         let f = CVPixelBufferGetPixelFormatType(depthMap)
-         switch f {
-         case kCVPixelFormatType_DepthFloat32:
-         print("format: kCVPixelFormatType_DepthFloat32")
-         case kCVPixelFormatType_OneComponent8:
-         print("format: kCVPixelFormatType_OneComponent8")
-         default:
-         print("format: unknown")
-         }
-         */
-        
-        // Stoppt die Aufnahme kurz, um
+        // Stoppt die Aufnahme kurz, um:
 //        CVPixelBufferLockBaseAddress(depthMap, CVPixelBufferLockFlags(rawValue: 0))
 //        let floatBuffer = unsafeBitCast(CVPixelBufferGetBaseAddress(depthMap), to: UnsafeMutablePointer<Float32>.self)
 //        let depthMapX = depthMapWidth/2; //must be lower that cols
@@ -139,9 +123,6 @@ class CameraViewController: UIViewController, ARSessionDelegate {
         
         // Transformiert das Bild auf die richtige Bildschirmgröße
         let transformedImage = depthBuffer.transformed(by: normalizeTransform.concatenating(flipTransform).concatenating(displayTransform).concatenating(toViewPortTransform)).cropped(to: viewPort)
-        
-        //print(name)
-        
         
         //let displayImage = UIImage(ciImage: transformedImage)
         let displayImage = UIImage(ciImage: transformedImage)

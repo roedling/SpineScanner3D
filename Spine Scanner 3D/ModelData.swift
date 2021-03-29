@@ -11,14 +11,13 @@ import ARKit
 
 class ModelData {
     
-    private var depthMap: [[Float32]] = [[]]    // 2d array of depth data from the lidar
-    private var vertices: [SCNVector3] = []     // 3d vertices of the mesh covering the scanned object
-    private var normals: [SCNVector3] = []      // normals for each vertice
-    private var texCoord: [simd_float2] = []    // texture coordinates
-    private var idxMatrix: [[Int32?]] = [[]]    // 2d array with pointers into the verices array
-                                                // maps from lidar pixel to vertice in world coordinates
-                                                // value could be nil if vertice was skiped or removed
-    private var triangleIndices: [Int32] = []   // 1d list of indices pointing to triangle vertices
+    private var depthMap: [[Float32]] = [[]]    // 2d array (Tiefendaten lidar)
+    private var vertices: [SCNVector3] = []     // 3d vertices
+    private var normals: [SCNVector3] = []      // normale für jeden vertex
+    private var texCoord: [simd_float2] = []    // Textur koordinaten
+    private var idxMatrix: [[Int32?]] = [[]]    // 2d array mit zeigern in das vertices array
+                                                
+    private var triangleIndices: [Int32] = []   // 1d array der triangle indices als Zeiger auf das Index array (idxMatrix)
     
     var frameCopy: ARFrame? = nil
     // Kamera intrinsics
@@ -176,10 +175,10 @@ class ModelData {
         // kleinster z-wert aller vertices, um das Model später auf die richtige Entfernung zu setzen
         var minZ: Float32 = Float.greatestFiniteMagnitude
         
-        // init 2d matrix of indices. Every index points to an 3d vertice. the x and y coordinates of the 3d vertices are aligned to the 2d matrix.
+        // init 2d matrix von indices. Jeder Index zeigt auf einen 3D-vertex. Die x- und y-Koordinaten der 3d-vertices sind an der 2d-Matrix ausgerichtet.
         idxMatrix = Array(repeating: Array(repeating: nil, count: h), count: w)
         
-        // traverse the 2d depthMap. Calculate 3d points from the position of the depth value in the depth map in respect to the camera intrinsics
+        // Berechnen der Punkte im Raum (von Tiefenkart zu Punktwolke)
         var idx:Int32 = 0
         for ix in 0..<w {
             for iy in 0..<h {
@@ -212,31 +211,30 @@ class ModelData {
             }
         }
         
-        // use x and y component of the vertice behind the center of the camera (or depth map)
-        // to translate the point cloud back into the viewers line of sight after all rotational operations.
-        // also do a translation in direction of z, so that the smallest value of z is 0 afterwards
-        let idxCenter = idxMatrix[Int(w/2)][Int(h/2)] // get center of depth map
-        var center = SCNVector3(0,0,0) // default, in case there is no center point
+        // Das Modell wird mittig in den View des Betrachters gerückt
+        // Ausserdem wird der kleinste z-Wert verwendet um die Entfernung des Modells zu setzen
+        let idxCenter = idxMatrix[Int(w/2)][Int(h/2)] // Zentrum der Tiefenkarte
+        var center = SCNVector3(0,0,0)
         if (idxCenter != nil) {
-            center = vertices[Int(idxCenter!)]  // get vertice behind the center of the depth map
+            center = vertices[Int(idxCenter!)]  //Vertex im Zentrum finden
         }
-        // now translate the point cloud
         for index in vertices.indices {
             vertices[index] += SCNVector3(-center.x,-center.y,-minZ)
         }
         
         print("\(#function): total points: \(w*h), valid points: \(idx)")
         
-        // generate 2 triangles for every vertex (but skip last row & column)
+        // generiert für jedes "Viereck" 2 Dreiecke (Überspringen von letzter Zeile und Spalte)
         for ix in 0..<w-1 {
             for iy in 0..<h-1 {
                 genTriangle(idxMatrix[ix][iy],idxMatrix[ix][iy+1],idxMatrix[ix+1][iy])
                 genTriangle(idxMatrix[ix+1][iy],idxMatrix[ix][iy+1],idxMatrix[ix+1][iy+1])
             }
         }
+        //print("Punkt 0:\(triangleIndices[0]) Punkt 1:\(triangleIndices[1])")
         
         
-        // create data structures needed by SCNGeometry
+        // Generieren der Datenstruktur für SCNGeometry
     
         let vertexData = NSData(bytes: vertices, length: MemoryLayout<SCNVector3>.size * vertices.count) as Data
         
@@ -281,14 +279,9 @@ class ModelData {
         
     }
     
-    // generate triangle from 3 points (given as index into self.vertices[]) and
-    // add the calculated normal to self.normals[]
-    
-    
-    
     private func genTriangle(_ p1:Int32?, _ p2:Int32?, _ p3:Int32?) {
         if (p1 == nil || p2 == nil || p3 == nil) {
-            // generate no triangle if one or more vertices are nil (clipped away)
+            // generiert kein dreieck wenn nicht alle Vertices vorhanden sind
             return
         }
         if(maxZ(p1!,p2!,p3!)>0.2) {
@@ -298,15 +291,15 @@ class ModelData {
         triangleIndices.append(p2!)
         triangleIndices.append(p3!)
         
-        var n = calcNormal(p1!,p2!,p3!)  // find the normal of the triangle
+        var n = calcNormal(p1!,p2!,p3!)  // berechnen der Normale
         
-        // just in case the resulting normal points away from the viewer (z is positive)
-        // negate z to flip it around
+        //Falls Normale von Betrachter weg zeigt, werden diese einem gedreht
         n.z = (n.z > 0) ? -n.z : n.z
         
-        // add normalized normal of triangle to normal of all 3 vertices
-        // In the end, all normal of the adjacent triangles were added to each vertice and
-        // the resulting normal represents the mean value between all adjacent triangles
+        // normalisierte Normale des Dreiecks zur Normalen aller 3 Vertices hinzufügen
+        // Am Ende alle Normalen der benachbarten Dreiecke zu jedem Vertex hinzugefügen
+        // Die resultierende Normalen repräsentiert den Mittelwert zwischen allen benachbarten Dreiecken
+        // am Ende noch Normalisieren
         normals[Int(p1!)] += n
         normals[Int(p1!)].normalize()
         normals[Int(p2!)] += n
@@ -375,6 +368,7 @@ class ModelData {
         return array
     }
     
+    //Berechnen der Parameter
     func trunkInclination() -> Float {
         let a = (markerDM.z - markerVP.z)
         let b = (markerDM.y - markerVP.z)

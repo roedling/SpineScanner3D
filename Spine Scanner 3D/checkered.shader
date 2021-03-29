@@ -1,3 +1,10 @@
+//
+//  stripes.shader
+//  Spine Scanner 3D
+//
+//  Created by Carlotta Rödling on 17.01.21.
+//
+
 
 // show a mesh of checkered lines on the body
 // the lines are aligned to the x and y axis of the world

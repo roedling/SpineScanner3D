@@ -12,7 +12,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var sceneView: SCNView!
-    //var aRDaten: Data?
+
     
     @IBOutlet weak var clearButton: RoundButton!
     @IBOutlet weak var calculationButton: RoundButton!
@@ -21,7 +21,6 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
     
     var modelData: ModelData?
     var mesh: SCNGeometry? = nil
-    //var model: ModelData? = nil
     var colormapShader: String = ""
     var checkeredShader: String = ""
     var countMarker: Int = 0
@@ -72,7 +71,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
        print("Save successful!")
    }
 
-    
+    //Auswahl des angewendeten Shaders
     @IBAction func chooseMaterialPressed(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -149,14 +148,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
             //model = ModelData()
             mesh = modelData!.generateMesh()
             mesh!.firstMaterial!.diffuse.contents = modelData?.colorImage // UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
-        
-            // Weitere  Einstellungen
-            // rotate texture 90º for portrait mode
-            //let translation = SCNMatrix4MakeTranslation(0, -1, 0)
-            //let rotation = SCNMatrix4MakeRotation(Float(90.0).inRadians(), 0, 0, 1)
-            //let transform = SCNMatrix4Mult(translation, rotation)
-            //mesh.firstMaterial?.diffuse.contentsTransform = transform
-            //mesh.firstMaterial!.diffuse.contents = UIColor(red: 254/255, green: 177/255, blue: 154/255, alpha: 0.8)
+
             
             //Farbe der Spiegelung
             mesh!.firstMaterial!.specular.contents = UIColor.gray
@@ -182,7 +174,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
         }
         return nil
     }
-    
+    //Setzen der Marker
     @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
         
         let sceneView = self.sceneView!
@@ -221,7 +213,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
         
         marker[countMarker] = hitPos!
         
-        print("-> \(hitPos!)")
+        //print("-> \(hitPos!)")
         
         let sphere = SCNSphere(radius: 0.01)
         sphere.firstMaterial?.diffuse.contents = UIColor.blue
@@ -234,6 +226,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
         
     }
     
+    //Aller markierungen löschen
     @IBAction func clearButtonPressed(_ sender: Any) {
         if countMarker > 0 {
         sceneView.scene?.rootNode.enumerateChildNodes { (node , stop) in
@@ -249,6 +242,7 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
         }
     }
     
+    //identifizieren der entsprechenden Marker zu VP,DL und DR.
     @IBAction func calculationButtonPressed(_ sender: Any) {
         
         var dl = SCNVector3()
@@ -265,10 +259,9 @@ class ModelViewController: UIViewController, SCNSceneRendererDelegate {
                     dr = m
                 }
             }
-            print("dl: ",dl)
-            print("dr: ",dr)
-            print("vp: ",modelData?.markerVP)
         }
+        
+        //Berechnen von DM durch weiteren Strahl in die Scene und überprüfen an welcher stelle er das Objekt trifft
         let m = (dl+dr)*0.5
         
         var rayStart = m

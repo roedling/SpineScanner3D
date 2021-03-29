@@ -395,19 +395,43 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-Xb-sRA">
-                                <rect key="frame" x="20" y="306" width="66.666666666666671" height="17"/>
+                                <rect key="frame" x="20" y="306" width="72" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44b-Ph-wtC">
+                                <rect key="frame" x="140" y="306" width="66.666666666666686" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iae-sA-zXB">
-                                <rect key="frame" x="20" y="407" width="66.666666666666671" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="20" y="407" width="72" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-2Y-gfO">
-                                <rect key="frame" x="20" y="508" width="66.666666666666671" height="17"/>
+                                <rect key="frame" x="20" y="508" width="72" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbk-iv-hNi">
+                                <rect key="frame" x="140" y="407" width="67" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-9e-SlD">
+                                <rect key="frame" x="140" y="508" width="66.666666666666686" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jv-Rk-EoM">
+                                <rect key="frame" x="242.99999999999997" y="535" width="66.666666666666657" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -419,26 +443,38 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                             <constraint firstItem="Yko-Xb-sRA" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="1OV-fS-fbm"/>
                             <constraint firstItem="vjl-jK-n7M" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="1R2-FQ-VG1"/>
                             <constraint firstItem="biM-R9-kqh" firstAttribute="top" secondItem="pph-Ce-ZXh" secondAttribute="top" id="2fR-wW-kfP"/>
+                            <constraint firstItem="19J-9e-SlD" firstAttribute="top" secondItem="fkV-FJ-ezW" secondAttribute="bottom" constant="20" id="8XW-FH-koz"/>
                             <constraint firstItem="fkV-FJ-ezW" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="C6p-DO-X54"/>
                             <constraint firstItem="Yko-Xb-sRA" firstAttribute="top" secondItem="ZaE-55-toF" secondAttribute="bottom" constant="20" id="Drc-1a-g4K"/>
+                            <constraint firstItem="Vbk-iv-hNi" firstAttribute="top" secondItem="zNL-NV-bO3" secondAttribute="bottom" constant="20" id="EVk-1r-7Yx"/>
                             <constraint firstItem="fkV-FJ-ezW" firstAttribute="top" secondItem="Iae-sA-zXB" secondAttribute="bottom" constant="40" id="Hb3-0N-l8O"/>
                             <constraint firstItem="pph-Ce-ZXh" firstAttribute="trailing" secondItem="biM-R9-kqh" secondAttribute="trailing" id="Oa2-Cv-Fw0"/>
                             <constraint firstItem="uy6-2Y-gfO" firstAttribute="top" secondItem="fkV-FJ-ezW" secondAttribute="bottom" constant="20" id="UZQ-8I-on1"/>
+                            <constraint firstItem="19J-9e-SlD" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="140" id="Y3R-je-qNr"/>
                             <constraint firstItem="ZaE-55-toF" firstAttribute="top" secondItem="vjl-jK-n7M" secondAttribute="bottom" constant="90" id="YTN-HI-rIM"/>
+                            <constraint firstItem="3Jv-Rk-EoM" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="243" id="ZpU-9g-yxW"/>
                             <constraint firstItem="Iae-sA-zXB" firstAttribute="top" secondItem="zNL-NV-bO3" secondAttribute="bottom" constant="20" id="Zqq-GP-5XO"/>
                             <constraint firstItem="Iae-sA-zXB" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="alI-ir-mta"/>
                             <constraint firstItem="uy6-2Y-gfO" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="ao5-xv-orN"/>
                             <constraint firstItem="zNL-NV-bO3" firstAttribute="top" secondItem="Yko-Xb-sRA" secondAttribute="bottom" constant="40" id="bg8-45-es0"/>
+                            <constraint firstItem="Vbk-iv-hNi" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="140" id="cdP-nB-m7M"/>
+                            <constraint firstItem="44b-Ph-wtC" firstAttribute="top" secondItem="ZaE-55-toF" secondAttribute="bottom" constant="20" id="cuh-vj-KLO"/>
+                            <constraint firstItem="44b-Ph-wtC" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="140" id="dSY-IF-cjh"/>
                             <constraint firstItem="ZaE-55-toF" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="f5F-1U-hK7"/>
                             <constraint firstItem="vjl-jK-n7M" firstAttribute="top" secondItem="pph-Ce-ZXh" secondAttribute="top" constant="48" id="hkQ-Bm-3YG"/>
+                            <constraint firstItem="3Jv-Rk-EoM" firstAttribute="top" secondItem="19J-9e-SlD" secondAttribute="bottom" constant="10" id="jkp-nl-yb1"/>
                             <constraint firstItem="zNL-NV-bO3" firstAttribute="leading" secondItem="pph-Ce-ZXh" secondAttribute="leading" constant="20" id="rW4-I7-sei"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IFD-8c-PbS"/>
                     <connections>
                         <outlet property="pelvicTilt" destination="uy6-2Y-gfO" id="cAJ-WD-gN5"/>
+                        <outlet property="pelvicTiltSV" destination="3Jv-Rk-EoM" id="yla-xH-udg"/>
+                        <outlet property="pelvicTiltSVf" destination="19J-9e-SlD" id="xwV-wl-NPz"/>
                         <outlet property="trunkImbalance" destination="Iae-sA-zXB" id="pqR-Jc-lZo"/>
+                        <outlet property="trunkImbalanceSV" destination="Vbk-iv-hNi" id="syj-M1-3n1"/>
                         <outlet property="trunkInclination" destination="Yko-Xb-sRA" id="2fc-Lf-K1t"/>
+                        <outlet property="trunkInclinationSV" destination="44b-Ph-wtC" id="EzD-0W-fCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-ft-yoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -451,7 +487,6 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ypI-YX-DKr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNn-JA-vKm">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
